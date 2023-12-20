@@ -44,7 +44,7 @@ def make_default_fig(figsize=(5, 5)):
 
 def imshow_with_cbar(
     data, fig=None, ax=None, figsize=(5, 5), cmap=cm.grayC, cmap_type=None, title_str=None, ticks='off', labels=None,
-    vmin=None, vmax=None, vcenter=None,
+    vmin=None, vmax=None, vcenter=None, deltav=None,
     ):
 
     if fig == None:
@@ -56,7 +56,8 @@ def imshow_with_cbar(
         vmax = data.max()
     
     if vcenter is not None:
-        deltav = np.max([np.abs(vmax - vcenter), np.abs(vmin - vcenter)])
+        if deltav == None:
+            deltav = np.max([np.abs(vmax - vcenter), np.abs(vmin - vcenter)])
         vmin = vcenter - deltav
         vmax = vcenter + deltav
 
