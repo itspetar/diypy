@@ -41,6 +41,10 @@ def make_default_fig(figsize=(5, 5)):
 
 #%% 2D PLOTTING TOOLS
 
+def subplots(nrows=1, ncols=1, panel_length=4, padding=1):
+    fig, ax = plt.subplots(nrows=nrows, ncols=ncols, figsize=(ncols*(panel_length + padding), nrows*panel_length))
+    return fig, ax
+
 
 def imshow_with_cbar(
     data, fig=None, ax=None, figsize=(5, 5), cmap=cm.grayC, cmap_type=None, title_str=None, ticks='off', labels=None,
