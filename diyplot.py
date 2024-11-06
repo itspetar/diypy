@@ -16,6 +16,9 @@ date_formatter = DateFormatter('%H:%M') # for plot axis
 
 #%% GENERAL TOOLS
 
+def today_str():
+    return datetime.today().strftime('%y_%m_%d')
+
 
 def make_cmap(rgb_path):
     rgb_values = []
