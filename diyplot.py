@@ -40,6 +40,8 @@ def make_default_fig(figsize=(5, 5)):
     fig, ax = plt.subplots(figsize=figsize)
     return fig, ax
 
+def make_cmap_cm(n, cmap=cm.lipari, clip=(0.0, 0.9)):
+    return cmap(np.linspace(clip[0], clip[1], n))
 
 
 #%% 2D PLOTTING TOOLS
